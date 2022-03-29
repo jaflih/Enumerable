@@ -1,4 +1,4 @@
-# morse_code
+# Enumerable
 
 > This is a ruby app implementing our own Enumerable
 
