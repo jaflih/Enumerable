@@ -6,8 +6,8 @@ class MyList
     @list = list
   end
 
-  def each
-    @list.each { |e| puts e }
+  def each(&block)
+    @list.each(&block)
   end
 end
 

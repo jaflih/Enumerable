@@ -1,14 +1,14 @@
 module MyEnumerable
   # The method returns true if the block never returns false or nil.
   def all?
-    @list.each do |e|
+    each do |e|
       return false unless yield e
     end
     true
   end
 
   def any?
-    @list.each do |e|
+    each do |e|
       return true if yield e
     end
     false
@@ -17,7 +17,7 @@ module MyEnumerable
   # Returns an array containing all elements of enum for which the given block returns a true value.
   def filter
     result = []
-    @list.each do |e|
+    each do |e|
       result.push(e) if yield e
     end
     result
