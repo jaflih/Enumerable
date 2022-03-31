@@ -13,4 +13,13 @@ module MyEnumerable
     end
     false
   end
+
+  # Returns an array containing all elements of enum for which the given block returns a true value.
+  def filter
+    result = []
+    @list.each do |e|
+      result.push(e) if yield e
+    end
+    result
+  end
 end
