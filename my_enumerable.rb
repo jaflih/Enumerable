@@ -1,12 +1,16 @@
 module MyEnumerable
-
-  # The method returns true if the block never returns false or nil. 
+  # The method returns true if the block never returns false or nil.
   def all?
-    @list.each do |e| 
-      if(!yield e) 
-        return false 
-      end
+    @list.each do |e|
+      return false unless yield e
     end
-    return true
+    true
+  end
+
+  def any?
+    @list.each do |e|
+      return true if yield e
+    end
+    false
   end
 end

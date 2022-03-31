@@ -3,17 +3,20 @@ class MyList
   include MyEnumerable
 
   def initialize(*list)
-    @list =list
+    @list = list
   end
 
-  def each 
-    @list.each{ |e| puts e}
+  def each
+    @list.each { |e| puts e }
   end
 end
 
 list = MyList.new(1, 2, 3, 4)
-#list.each
-puts list.all? {|e| e < 5}
-# => true
-puts list.all? {|e| e > 5}
-# => false 
+
+puts(list.all? { |e| e < 5 })
+
+puts(list.all? { |e| e > 5 })
+
+puts(list.any? { |e| e == 2 })
+
+puts(list.any? { |e| e == 5 })
